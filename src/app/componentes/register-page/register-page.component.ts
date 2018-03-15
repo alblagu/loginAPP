@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./register-page.component.scss']
 })
 export class RegisterPageComponent implements OnInit {
-
   public email:string;
   public password:string;
   constructor( 
@@ -20,12 +19,10 @@ export class RegisterPageComponent implements OnInit {
   }
   
   onSubmitAddUser(){
-    console.log("ola");
     this.authService.registerUser(this.email, this.password)
     .then((res) => {
       this.router.navigate(['/privado']);
     }).catch(err => {
-      console.log("error");
       console.log(err);
     })
   }

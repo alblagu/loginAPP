@@ -20,7 +20,7 @@ export class AuthService {
 
   loginEmail(email:string, pass:string ){
     return new Promise((resolve,reject) =>{
-      this.afAuth.auth.createUserWithEmailAndPassword(email, pass)
+      this.afAuth.auth.signInWithEmailAndPassword(email, pass)
       .then( userData => resolve(userData),
      err=> reject (err));
     });
